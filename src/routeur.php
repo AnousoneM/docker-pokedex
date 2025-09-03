@@ -1,9 +1,17 @@
 <?php
 
-// exemple pour afficher home
-// on inclut le controller respectif : HomeController
-require_once __DIR__ . '/controllers/HomeController.php';
-// je créé un objet controller qui a comme classe HomeController
-$controller = new HomeController();
-// j'utilise la méthode index() pour afficher le contenu
-$controller->index();
+// on définit une variable $url qui va récupérer la valeur de l'index 'url' dans le tableau $_GET, ou 'home' si cette index n'existe pas
+$url = $_GET['url'] ?? 'home';
+
+switch($url) {
+    case 'home':
+        // exemple pour afficher home
+        // on inclut le controller respectif : HomeController
+        require_once __DIR__ . '/controllers/HomeController.php';
+        // je créé un objet controller qui a comme classe HomeController
+        $controller = new HomeController();
+        // j'utilise la méthode index() pour afficher le contenu
+        $controller->index();
+        break;
+}
+
