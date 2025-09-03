@@ -3,6 +3,7 @@
 // on définit une variable $url qui va récupérer la valeur de l'index 'url' dans le tableau $_GET, ou 'home' si cette index n'existe pas
 $url = $_GET['url'] ?? 'home';
 
+// on utilise un switch pour gérer les différentes routes
 switch($url) {
     case 'home':
         // exemple pour afficher home
