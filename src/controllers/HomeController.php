@@ -14,6 +14,7 @@ class HomeController
         // on recupère tous les pokemons à l'aide de la méthode getAll() et on stock les données dans la variable $tousLesPokemons
         $objPokemons = new PokemonModel();
         $tousLesPokemons = $objPokemons->getAll();
+        $tousLesTypes = $objPokemons->getAllType();
 
         // on appelle la vue home
         require_once __DIR__ . '/../views/home.php';

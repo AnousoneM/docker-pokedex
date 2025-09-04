@@ -39,4 +39,24 @@ class PokemonModel
         }
         return $result;
     }
+
+    public function getAllType()
+    {
+        // on va chercher le fichier json.
+        $jsonFile = file_get_contents(__DIR__ . '/../data/pokemons.json');
+        // on crée un tableau associatif à l'aide de json_decode()
+        $allPokemons = json_decode($jsonFile, true);
+
+        $arrayType = [];
+
+        foreach ($allPokemons as $pokemon) {
+            foreach ($pokemon['type'] as $type) {
+                if (!in_array($type, $arrayType, 1)) {
+                    $arrayType[] = $type;
+                }
+            }
+        }
+
+        return $arrayType;
+    }
 }

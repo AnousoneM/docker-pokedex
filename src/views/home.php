@@ -1,3 +1,8 @@
+<?php
+var_dump($tousLesTypes);
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,9 +14,22 @@
 </head>
 
 <body>
+    <h1 class="text-center">POKEDEX</h1>
+    <h2 class="text-center">Let's go Pikachu!</h2>
 
-    <h1>POKEDEX</h1>
-    <h2>Let's go Pikachu!</h2>
+    <div class="row justify-content-center">
+        <?php foreach ($tousLesPokemons as $pokemon) { ?>
+            <div class="col-lg-2 m-2">
+                <div class="card text-center">
+                    <img src="<?= $pokemon['image'] ?>" class="card-img-top" alt="Pikachu">
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $pokemon['nom'] ?></h5>
+                        <a href="index.php?url=details/<?= $pokemon['id'] ?>" class="btn btn-primary">Voir les détails</a>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
