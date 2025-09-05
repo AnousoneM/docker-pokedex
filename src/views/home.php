@@ -1,8 +1,3 @@
-<?php
-var_dump($tousLesTypes);
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 
